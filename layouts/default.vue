@@ -1,15 +1,17 @@
 <template>
   <div>
     <div v-if="$auth.loggedIn">
-      {{ $auth.user.email }}
+      <small>{{ $auth.user.email }}</small>
       <b-button variant="danger">logout</b-button>
     </div>
     <div v-else>
-      not logged in
-      <b-button variant="primary">login</b-button>
-      <b-button variant="outline-primary">register</b-button>
+      <small>not logged in</small>
+      <nuxt-link to="/login">login</nuxt-link>
+      <nuxt-link to="/register">register</nuxt-link>
     </div>
-    <Nuxt />
+    <b-container>
+      <Nuxt />
+    </b-container>
   </div>
 </template>
 
